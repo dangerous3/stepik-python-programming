@@ -18,10 +18,9 @@
 print('First;Second-1 Second-2;Third'.split(';'))
 # ['First', 'Second-1 Second-2', 'Third']'''
 
-
 table =[]
 
-# Данные для отладки: './samples/abitur.txt'
+# Файл данных для отладки: ./samples/abitur.txt
 
 with open('/home/dangerous3/Загрузки/dataset_3363_4.txt', 'r') as abi:
     for line in abi:
@@ -33,21 +32,17 @@ with open('/home/dangerous3/Загрузки/dataset_3363_4.txt', 'r') as abi:
 for i in range(len(table)):
     table[i] = table[i].split(';')
 
-#print(table)
-
-
 math_sum = 0
 phys_sum =0
 rus_sum = 0
 
-with open('/home/dangerous3/Загрузки/dataset_3363_4-decoded.txt', 'w') as wr:
+with open('/home/dangerous3/Загрузки/dataset_3363_4-decoded-1.txt', 'w') as wr:
     all_av = ''
     for surname in range(len(table)):
         average = list(map(float, table[surname][1:]))
-        average = str(sum(average) / 3)
+        average = str(round(sum(average) / 3, 9))
         wr.write(average + "\n")
         math_sum += int(table[surname][1])
         phys_sum += int(table[surname][2])
         rus_sum += int(table[surname][3])
-    wr.write(str(math_sum / 3) + " " + str(phys_sum / 3) + " " + str(rus_sum / 3))
-
+    wr.write(str(round((math_sum / len(table)), 9)) + " " + str(round((phys_sum / len(table)), 9)) + " " + str(round((rus_sum / len(table)), 9)))
