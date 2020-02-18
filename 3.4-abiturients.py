@@ -44,10 +44,10 @@ with open('/home/dangerous3/Загрузки/dataset_3363_4-decoded.txt', 'w') a
     all_av = ''
     for surname in range(len(table)):
         average = list(map(float, table[surname][1:]))
-        average = str(round(sum(average) / 3, 9))
+        average = str(sum(average) / 3)
         wr.write(average + "\n")
-        math_sum += float(table[surname][1])
-        phys_sum += float(table[surname][2])
-        rus_sum += float(table[surname][3])
-    wr.write(str(round(math_sum / 3, 9)) + " " + str(round(phys_sum / 3, 9)) + " " + str(round(rus_sum / 3, 9)))
+        math_sum += int(table[surname][1])
+        phys_sum += int(table[surname][2])
+        rus_sum += int(table[surname][3])
+    wr.write(str(math_sum / 3) + " " + str(phys_sum / 3) + " " + str(rus_sum / 3))
 
