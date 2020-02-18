@@ -1,0 +1,3 @@
+abc a bCd bC AbC BC BCD bcd ABC
+abc a bCd bC AC BC D c ABC
+ab a b bC AbC BC BCD bcd
