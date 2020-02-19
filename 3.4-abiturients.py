@@ -18,26 +18,24 @@
 print('First;Second-1 Second-2;Third'.split(';'))
 # ['First', 'Second-1 Second-2', 'Third']'''
 
-
-table =[]
+table = []
 
 # Данные для отладки: './samples/abitur.txt'
 
 with open('/home/dangerous3/Загрузки/dataset_3363_4.txt', 'r') as abi:
     for line in abi:
         line = line.strip()
-        #temp = line.split(';')
+        # temp = line.split(';')
         table.append(line)
-
 
 for i in range(len(table)):
     table[i] = table[i].split(';')
 
-#print(table)
+# print(table)
 
 
 math_sum = 0
-phys_sum =0
+phys_sum = 0
 rus_sum = 0
 
 with open('/home/dangerous3/Загрузки/dataset_3363_4-decoded.txt', 'w') as wr:
@@ -50,4 +48,3 @@ with open('/home/dangerous3/Загрузки/dataset_3363_4-decoded.txt', 'w') a
         phys_sum += int(table[surname][2])
         rus_sum += int(table[surname][3])
     wr.write(str(math_sum / 3) + " " + str(phys_sum / 3) + " " + str(rus_sum / 3))
-
